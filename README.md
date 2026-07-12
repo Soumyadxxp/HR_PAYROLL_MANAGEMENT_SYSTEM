@@ -191,18 +191,18 @@ HR_PAYROLL_MANAGEMENT_SYSTEM/
 
 Through this project, I gained practical experience in:
 
-Designing relational database schemas.
-Creating relationships using primary and foreign keys.
-Writing SQL queries from basic to advanced levels.
-Using aggregate functions for data analysis.
-Applying GROUP BY and HAVING clauses.
-Working with different types of joins.
-Writing subqueries and nested subqueries.
-Creating reusable SQL views.
-Performing INSERT, UPDATE, and DELETE operations.
-Applying constraints to maintain data integrity.
-Creating indexes for database optimization.
-Using window functions for employee ranking.
-Performing payroll and attendance analysis.
-Future Enhancements
+- Designing relational database schemas.
+- Creating relationships using primary and foreign keys.
+- Writing SQL queries from basic to advanced levels.
+- Using aggregate functions for data analysis.
+- Applying GROUP BY and HAVING clauses.
+- Working with different types of joins.
+- Writing subqueries and nested subqueries.
+- Creating reusable SQL views.
+- Performing INSERT, UPDATE, and DELETE operations.
+- Applying constraints to maintain data integrity.
+- Creating indexes for database optimization.
+- Using window functions for employee ranking.
+- Performing payroll and attendance analysis.
+
 
