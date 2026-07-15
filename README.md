@@ -205,4 +205,53 @@ Through this project, I gained practical experience in:
 - Using window functions for employee ranking.
 - Performing payroll and attendance analysis.
 
+## ER-Model 
 
+<img width="1027" height="593" alt="Screenshot 2026-07-15 230000" src="https://github.com/user-attachments/assets/61f72c24-ba71-4145-8a50-b6e160a96e8d" />
+
+## Relational Model 
+
+DEPARTMENTS(
+    dept_id PK,
+    dept_name,
+    location
+)
+
+EMPLOYEES(
+    emp_id PK,
+    emp_name,
+    email,
+    phone,
+    hire_date,
+    job_role,
+    dept_id FK
+)
+
+PROJECTS(
+    project_id PK,
+    project_name,
+    start_date,
+    end_date
+)
+
+EMPLOYEE_PROJECTS(
+    emp_id PK FK,
+    project_id PK FK,
+    role
+)
+
+SALARIES(
+    salary_id PK,
+    emp_id FK,
+    basic_salary,
+    bonus,
+    deductions
+)
+
+ATTENDANCE(
+    attendance_id PK,
+    emp_id FK,
+    project_id FK,
+    date,
+    status
+)
