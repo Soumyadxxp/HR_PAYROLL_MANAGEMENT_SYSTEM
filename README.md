@@ -211,47 +211,61 @@ Through this project, I gained practical experience in:
 
 ## Relational Model 
 
-DEPARTMENTS(
-    dept_id PK,
-    dept_name,
-    location
-)
+```mermaid
+erDiagram
 
-EMPLOYEES(
-    emp_id PK,
-    emp_name,
-    email,
-    phone,
-    hire_date,
-    job_role,
-    dept_id FK
-)
+    DEPARTMENTS {
+        INT dept_id PK
+        VARCHAR dept_name
+        VARCHAR location
+    }
 
-PROJECTS(
-    project_id PK,
-    project_name,
-    start_date,
-    end_date
-)
+    EMPLOYEES {
+        INT emp_id PK
+        VARCHAR emp_name
+        VARCHAR email
+        VARCHAR phone
+        DATE hire_date
+        VARCHAR job_role
+        INT dept_id FK
+    }
 
-EMPLOYEE_PROJECTS(
-    emp_id PK FK,
-    project_id PK FK,
-    role
-)
+    PROJECTS {
+        INT project_id PK
+        VARCHAR project_name
+        DATE start_date
+        DATE end_date
+    }
 
-SALARIES(
-    salary_id PK,
-    emp_id FK,
-    basic_salary,
-    bonus,
-    deductions
-)
+    EMPLOYEE_PROJECTS {
+        INT emp_id PK,FK
+        INT project_id PK,FK
+        VARCHAR role
+    }
 
-ATTENDANCE(
-    attendance_id PK,
-    emp_id FK,
-    project_id FK,
-    date,
-    status
-)
+    SALARIES {
+        INT salary_id PK
+        INT emp_id FK
+        DECIMAL basic_salary
+        DECIMAL bonus
+        DECIMAL deductions
+    }
+
+    ATTENDANCE {
+        INT attendance_id PK
+        INT emp_id FK
+        INT project_id FK
+        DATE date
+        VARCHAR status
+    }
+
+    DEPARTMENTS ||--o{ EMPLOYEES : has
+
+    EMPLOYEES ||--o{ EMPLOYEE_PROJECTS : assigned_to
+    PROJECTS ||--o{ EMPLOYEE_PROJECTS : contains
+
+    EMPLOYEES ||--o{ SALARIES : receives
+
+    EMPLOYEES ||--o{ ATTENDANCE : marks
+    PROJECTS ||--o{ ATTENDANCE : records
+```
